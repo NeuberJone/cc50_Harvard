@@ -1,17 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 int main ()
 {
-    // Declaração das variáveis
     long long card, cardCopy;
     int somaA, somaB = 0,somaT, digito, mult, i = 0, a;
 
     //Pede o numero do cartao ao usuario
     do
     {
-        printf ("Digite o numero do cartao de credito: ");
-        scanf ("%lld", &card);
+        cout << "Digite o numero do cartao de credito: ";
+        cin >> card;
     }
     while (card < 0);
     cardCopy = card;
@@ -25,7 +26,7 @@ int main ()
         cardCopy = cardCopy / 100;          // Faz a divisão para remover os ultimos dois dígitos e faz com o programa leia o próximo dígito 
         i ++;
     }
-
+    
     //Loop para fazer a segunda soma os digitos do numero do cartao
     cardCopy = card / 10;
     while (cardCopy > 0)
@@ -42,19 +43,19 @@ int main ()
     //Verifica se o cartao e valido e informa a bandeira do cartão
     if ((i == 13 || i == 16) && (somaT % 10) == 0 && digito == 4)
     {
-        printf ("\nO cartao numero %lld e um cartao VISA valido", card);
+       cout << "\nO cartao numero " << card << " e um cartao VISA valido.";
     }
     else if (i == 15 && ((somaT % 10) == 0) && (digito == 3 || digito == 4 || digito == 7) && (a == 4 || a == 7 || a == 3))
     {
-        printf ("\nO cartao numero %lld e um cartao American Express valido", card);
+        cout << "\nO cartao numero " << card << " e um cartao American Express valido.";
     }
     else if (i == 16 && ((somaT % 10) == 0) && (digito == 1 || digito == 2 || digito == 3 || digito == 4 || digito == 5) && (a == 1 || a == 2 || a == 3 || a == 4 || a == 5))
     {
-        printf ("\nO cartao numero %lld e um cartao MasterCard valido", card);
+        cout << "\nO cartao numero " << card << " e um cartao MasterCard valido.";
     }
     else
     {
-        printf ("\nO cartao numero %lld nao e valido", card);
+        cout << "\nO cartao numero " << card << " nao e valido.";
     }
     return 0;
 }

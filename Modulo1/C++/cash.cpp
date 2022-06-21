@@ -1,5 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 int main ()
 {
@@ -12,14 +14,14 @@ int main ()
     while(preco <= 0 || valorPago <= preco)
     {
         // Pede os valores para o usuário
-        printf("Digite o preco: ");
-        scanf("%f", &preco);
-        printf("Digite o valor pago: ");
-        scanf("%f", &valorPago);
+        cout << "Digite o preco: ";
+        cin >> preco;
+        cout << "Digite o valor pago: ";
+        cin >> valorPago;
     }
-        troco = valorPago - preco;      // Calcula o valor do troco
-        printf("O valor do troco sera de: %.2f", troco);    // Informa o valor do troco
-        
+        troco = valorPago - preco;          // Calcula o valor do troco
+        cout << "O valor do troco sera de: " << troco;          // Informa o valor do troco
+
         // Verifica qual a maior moeda possivel para o troco
         vinteCinco = (int)(troco/coin[0]);
         troco = troco - (vinteCinco*coin[0]);
@@ -34,22 +36,22 @@ int main ()
         troco = troco - (um*coin[3]);
 
         // Imprime o resultado na tela
-        printf("\n\nDe ao cliente:\n");
+        cout << "\n\nDe ao cliente:\n";
         if (vinteCinco > 0)
         {
-            printf("%d moedas de 25 centavos\n", vinteCinco);
+            cout << vinteCinco << " moedas de 25" <<  "\n";
         }
         if (dez > 0)
         {
-            printf("%d moedas de 10 centavos\n", dez);
+            cout <<  dez << " moedas de 10" << "\n";
         }
         if (cinco > 0)
         {
-            printf("%d moedas de 5 centavos\n", cinco);
+            cout <<  cinco <<  " moedas de 5" <<"\n";
         }
         if (um > 0)
         {
-            printf("%d moedas de 1 centavo\n", um);
+            cout <<  um << " moedas de 1" <<"\n";
         }
     return 0;
 }

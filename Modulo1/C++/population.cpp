@@ -1,19 +1,22 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 int main ()
 {
     int population = 0, inicio = 0, end = 0, i, born = 0, dead = 0;
 
+
     while (inicio <= 9)
     {
-        printf ("Digite o tamanho inicial da populacao de lhamas: ");
-        scanf ("%d", &inicio);
+        cout << "Digite o tamanho inicial da populacao de lhamas: ";
+        cin >> inicio;
     }
     while (end < inicio)
     {
-        printf ("Digite o tamanho final da populacao de lhamas: ");
-        scanf ("%d", &end);
+        cout << "Digite o tamanho final da populacao de lhamas: ";
+        cin >> end;
     }
     population = inicio;
     for ( i = 0; population <= end; i++)
@@ -22,6 +25,6 @@ int main ()
         dead = population / 4;
         population = (population + born) - dead;
     }
-    printf ("\nLevara %d ano(s) para a populacao de %d chegar a %d", i, inicio, end);
+    cout << "\nLevara " << i << " ano(s) para a populacao de " << inicio << "chegar a " << end;
     return 0;
 }

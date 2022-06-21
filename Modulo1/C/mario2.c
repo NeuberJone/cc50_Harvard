@@ -4,59 +4,34 @@
 int main ()
 {
 
-    int vinteCinco, dez, cinco, um;
-    float coin [4] = {0.25, 0.10, 0.5, 0.1};
-    float preco = 0, troco, valorPago;
+    int i,j,n = 9;
 
-    while(preco <= 0 || valorPago <= preco)
+    while(n > 8 || n < 0)
     {
-        printf("Digite o preco: ");
-        scanf("%f", &preco);
-        printf("Digite o valor pago: ");
-        scanf("%f", &valorPago);
-        troco = valorPago - preco;
+        printf("Digite o valor de n: ");
+        scanf("%d", &n);
     }
-            while (vinteCinco * coin[0] <= troco)
+        for(i = 1; i <= n; i++)
+        {
+            for(j = n - i; j >= 1; j--)
             {
-                vinteCinco++;
+                printf(" ");
             }
-            troco = (vinteCinco * coin[0]) - troco;
-
-            while (dez * coin[1] <= troco)
+            for(j = 1;j <= i; j++)
             {
-                dez++;
+                printf("#");
             }
-            troco = (dez * coin[1] - troco);
-
-            while (cinco * coin[2] <= troco)
+            printf("  ");
+            for(j = 1;j <= i; j++)
             {
-                cinco++;
+                printf("#");
             }
-            troco = (cinco * coin[2] - troco);
-
-            while (um * coin[3] <= troco)
+            for(j = n - i; j >= 1; j--)
             {
-                um++;
+                printf(" ");
             }
-            troco = (um * coin[3] - troco);
-            printf ("De ao cliente:");
-
-            if (vinteCinco > 0)
-            {
-                printf(" %d moedas de 25 ", vinteCinco);
-            }
-            if (dez > 0)
-            {
-                printf(" %d moedas de 10 ", dez);
-            }
-            if (cinco > 0)
-            {
-                printf(" %d moedas de 5 ", cinco);
-            }
-            if (um > 0)
-            {
-                printf(" %d moedas de 1 ", um);
-            }
+            printf("\n");
+        }
 
     return 0;
 }
