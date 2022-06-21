@@ -1,0 +1,50 @@
+Algoritmo "cash"
+
+Var
+
+vinteCinco, dez, cinco, um: inteiro
+coin [4] = {0.25, 0.10, 0.05, 0.01}: real
+preco = 0, troco, valorPago: real
+
+Inicio
+
+   enquanto preco <= 0 ou valorPago <= preco
+   escreva ("Digite o preco: ")
+   leia preco
+   escreva ("Digite o valor pago :")
+   leia valorPago
+
+   troco = valorPago - preco
+   escreval ("O valor do troco sera de: ", troco)
+
+   vinteCinco = troco/coin[0]
+   troco = troco - (vinteCinco*coin[0])
+
+   dez = troco/coin[1]
+   troco = troco - (dez*coin[1])
+
+   cinco = (troco/coin[2])
+   troco = troco - (cinco*coin[2])
+
+   um = troco/coin[3]
+   troco = troco - (um*coin[3])
+
+   escreval("De ao cliente:")
+
+   se vinteCinco > 0
+   escreval(" moedas de 25 centavos", vinteCinco)
+   FimSe
+
+   se dez > 0
+   escreval(" moedas de 10 centavos", dez)
+   FimSe
+
+   se cinco > 0
+   escreval(" moedas de 5 centavos", cinco)
+   FimSe
+
+   se um > 0
+   escreval(" moedas de 1 centavo", um)
+   FimSe
+
+Fimalgoritmo
