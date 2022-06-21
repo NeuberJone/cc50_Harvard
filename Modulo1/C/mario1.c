@@ -12,19 +12,19 @@ int main ()
         printf("Digite o valor de n: ");
         scanf("%d", &n);
     }
-        // Loops para imprimir a pirâmide no tamanho que o usuário definiu
-        for(i = 1; i <= n; i++)
+    // Loops para imprimir a pirâmide no tamanho que o usuário definiu
+    for(i = 1; i <= n; i++)
+    {
+        for(j = n - i; j >= 1; j--)            // Loop para imprimir os espaços
         {
-            for(j = n - i; j >= 1; j--)            // Loop para imprimir os espaços
-            {
-                printf(" ");
-            }
-            for(j = 1;j <= i; j++)            // Loop para imprimir as #
-            {
-                printf("#");
-            }
-            printf("\n");
+            printf(" ");
         }
+        for(j = 1;j <= i; j++)            // Loop para imprimir as #
+        {
+            printf("#");
+        }
+    printf("\n");
+    }
 
     return 0;
 }

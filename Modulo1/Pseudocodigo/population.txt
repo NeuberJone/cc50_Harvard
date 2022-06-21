@@ -1,0 +1,29 @@
+Algoritmo "population"
+
+Var
+
+population, inicio, end, i, born, dead: inteiro
+
+Inicio
+
+    enquanto inicio <= 9 faca
+        escreva ("Digite o tamanho inicial da populacao de lhamas: ")
+        leia inicio
+    fimenquanto
+
+    enquanto end < inicio faca
+        escreva ("Digite o tamanho final da populacao de lhamas: ")
+        leia end
+    fimenquanto
+
+    population = inicio
+
+    para i de population ate end faca
+        born = population / 3
+        dead = population / 2
+        population = (population + born) - dead
+    fimpara
+
+    escreva ("Levara ", i, " ano(s) para a populacao de ", inicio, " chegar a ", end)
+
+fimalgoritimo

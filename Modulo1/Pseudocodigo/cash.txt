@@ -8,11 +8,11 @@ preco = 0, troco, valorPago: real
 
 Inicio
 
-   enquanto preco <= 0 ou valorPago <= preco
-   escreva ("Digite o preco: ")
-   leia preco
-   escreva ("Digite o valor pago :")
-   leia valorPago
+   enquanto preco <= 0 ou valorPago <= preco faca
+      escreva ("Digite o preco: ")
+      leia preco
+      escreva ("Digite o valor pago :")
+      leia valorPago
 
    troco = valorPago - preco
    escreval ("O valor do troco sera de: ", troco)
@@ -32,19 +32,19 @@ Inicio
    escreval("De ao cliente:")
 
    se vinteCinco > 0
-   escreval(" moedas de 25 centavos", vinteCinco)
+      escreval(" moedas de 25 centavos", vinteCinco)
    FimSe
 
    se dez > 0
-   escreval(" moedas de 10 centavos", dez)
+      escreval(" moedas de 10 centavos", dez)
    FimSe
 
    se cinco > 0
-   escreval(" moedas de 5 centavos", cinco)
+      escreval(" moedas de 5 centavos", cinco)
    FimSe
 
    se um > 0
-   escreval(" moedas de 1 centavo", um)
+      escreval(" moedas de 1 centavo", um)
    FimSe
 
 Fimalgoritmo

@@ -1,0 +1,44 @@
+Algoritmo "mario2"
+
+Var
+
+i, j, n: inteiro
+
+Inicio
+
+    repita
+        escreva ("Digite o numero do cartao de credito: ")
+        leia card
+    ate card < 0
+
+    n = 9
+
+    enquanto n > 8 ou n < 0 faca
+        escreva ("Digite o valor de n: ")
+        leia n
+    fimenquanto
+
+    para i de 1 ate n faca
+        
+        para j = n - i de j ate 1 faca
+        escreva (" ")
+        fimpara
+
+        para j = 1 de j ate i faca
+        escreva ("#")
+        fimpara
+
+        escreva ("  ")
+
+        para j = 1 de j ate i faca
+        escreva ("#")
+        fimpara
+
+        para j = n - i de j ate 1 faca
+        escreva (" ")
+        fimpara
+
+        escreval ("")
+    fimpara
+
+fimalgoritimo

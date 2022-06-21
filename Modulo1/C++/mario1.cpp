@@ -14,10 +14,10 @@ int main ()
         cout << "Digite o valor de n: ";
         cin >> n;
     }
-        // Loops para imprimir a pirâmide no tamanho que o usuário definiu
-        for(i = 1; i <= n; i++)
-        {
-            for(j = n - i; j >= 1; j--)            // Loop para imprimir os espaços
+    // Loops para imprimir a pirâmide no tamanho que o usuário definiu
+    for(i = 1; i <= n; i++)
+    {
+        for(j = n - i; j >= 1; j--)            // Loop para imprimir os espaços
         {
             cout << " ";
         }

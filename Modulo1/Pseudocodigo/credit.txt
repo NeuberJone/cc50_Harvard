@@ -1,0 +1,51 @@
+Algoritmo "credit"
+
+Var
+
+card, cardCopy, somaA, somaB, somaT, digito, mult, a: inteiro
+
+Inicio
+
+    repita
+        escreva ("Digite o numero do cartao de credito: ")
+        leia card
+    ate card < 0
+
+    cardCopy = card
+
+    cardCopy = card / 10
+
+    enquanto cardCopy > 0 faca
+        digito = cardCopy % 10
+        mult = digito * 2
+        somaA = somaA + (mult % 10) + (mult / 10)
+        cardCopy = cardCopy / 100
+        i = i + 1
+    fimenquanto
+
+    enquanto cardCopy > 0 faca
+        digito = cardCopy % 10
+        somaB = somaB + digito
+        cardCopy = cardCopy / 100
+        a = digito
+        i = i + 1
+    fimenquanto
+
+    somaT = somaA + somaB
+
+    se (i == 13 ou i == 16) e ((somaT % 10) == 0) e (digito == 4)
+        escreval ("O cartao e um cartao VISA valido")
+    senao
+        se (i == 15 e ((somaT % 10) == 0) e (digito == 3 ou digito == 4 ou digito == 7) e (a == 4 ou a == 7 ou a == 3))
+            escreval ("O cartao e um cartao American Express valido")
+        senao
+            se (i == 16 e ((somaT % 10) == 0) e (digito == 1 ou digito == 2 ou digito == 3 ou digito == 4 ou digito == 5) e (a == 1 ou a == 2 ou a == 3 ou a == 4 ou a == 5))
+                escreval ("O cartao e um cartao MasterCard valido")
+            senao
+                escreval ("O cartao nao e valido")
+            fimse
+        fimse
+    fimse
+
+
+fimalgoritimo

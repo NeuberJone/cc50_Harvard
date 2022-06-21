@@ -8,6 +8,7 @@ int main ()
     long long card, cardCopy;
     int somaA, somaB = 0,somaT, digito, mult, i = 0, a;
 
+    cardCopy = card;
     //Pede o numero do cartao ao usuario
     do
     {
@@ -15,14 +16,13 @@ int main ()
         cin >> card;
     }
     while (card < 0);
-    cardCopy = card;
 
     //Loop para fazer a primeira soma os digitos do numero do cartao
     while (cardCopy > 0)
     {
         digito = cardCopy % 10;             // Obtem o ultimo dígito
         mult = digito * 2;                  // Multiplica o ultimo dígito por dois
-        somaB = somaB + (mult % 10) + (mult / 10);          //Somo os dígitos da multiplicação
+        somaA = somaA + (mult % 10) + (mult / 10);          //Somo os dígitos da multiplicação
         cardCopy = cardCopy / 100;          // Faz a divisão para remover os ultimos dois dígitos e faz com o programa leia o próximo dígito 
         i ++;
     }
@@ -32,7 +32,7 @@ int main ()
     while (cardCopy > 0)
     {
         digito = cardCopy % 10;             // Obtem o ultimo dígito
-        somaA = somaA + digito;             // Inclui o ultimo dígito a soma
+        somaB = somaB + digito;             // Inclui o ultimo dígito a soma
         cardCopy = cardCopy / 100;          // Faz a divisão para remover os ultimos dois dígitos e faz com o programa leia o próximo dígito
         a = digito;                         // Guarda o ultimo dígito
         i ++;
