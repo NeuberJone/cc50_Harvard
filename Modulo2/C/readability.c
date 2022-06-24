@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <math.h>
 
 int main ()
 {
     // Declaração das variáveis
     char line [500], caractere;
-    int i = 0, words = 1, sentances = 0;
-    float index, S, L;
+    int i = 0, words = 1, sentances = 0, letters = 0, index;
+    float S, L;
 
     do 
     {
@@ -28,12 +29,17 @@ int main ()
         {
             sentances ++;
         }
+        if ((line[i] >= 'a') && (line [i] <= 'z') || (line[i] >= 'A') && (line [i] <= 'Z'))
+        {
+            letters++;
+        }
     }
-    i = i - words - sentances;
 
-    L = ((float)i * (100 / (float)words));
+    L = ((float)letters * (100 / (float)words));
     S = ((float)sentances * (100/ (float)words));
-    index = (0.0588 * L) - (0.296 * S) - 15.8;
+    index = round((0.0588 * L) - (0.296 * S) - 15.8);
+
+    printf("\n %f\n", index);
 
     if (index < 1)
     {
@@ -45,7 +51,7 @@ int main ()
     }
     else
     {
-        printf("\nGrade %d\n", (int)index);
+        printf("\nGrade %i\n", (int)index);
     }
     
     return 0;
