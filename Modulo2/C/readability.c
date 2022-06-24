@@ -17,23 +17,25 @@ int main ()
     }
     while (caractere != '\n');
     line [i - 1] = '\0';
-    for (i = 0; line[i] == '\0'; i++)
+
+    
+    for (i = 0; line[i] != '\0'; i++)
     {
-        printf  ("i atual %d", i);
+        printf  ("i atual %d\n", i);
         if (line[i] == ' ')
         {
             space ++;
-            printf  ("espaco atual %d", space);
+            printf  ("espaco atual %d\n", space);
         }
         if (line[i] == '.')
         {
             dot ++;
-            printf  ("ponto %d", dot);
+            printf  ("ponto %d\n", dot);
         }
     }
-    printf  ("%d", i);
-    printf  ("%d", space);
-    printf  ("%d", dot);
+    printf  ("%d\n", i);
+    printf  ("%d\n", space);
+    printf  ("%d\n", dot);
 
 
     return 0;
