@@ -39,8 +39,6 @@ int main ()
     S = ((float)sentances * (100/ (float)words));
     index = round((0.0588 * L) - (0.296 * S) - 15.8);
 
-    printf("\n %f\n", index);
-
     if (index < 1)
     {
         printf("\nBefore grade 1\n");
