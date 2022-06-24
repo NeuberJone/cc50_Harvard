@@ -5,9 +5,9 @@
 int main ()
 {
     // Declaração das variáveis
-    char line [500];
-    char caractere;
-    int i = 0, space = 0, dot = 0;
+    char line [500], caractere;
+    int i = 0, words = 1, sentances = 0;
+    float index, S, L;
 
     do 
     {
@@ -18,25 +18,35 @@ int main ()
     while (caractere != '\n');
     line [i - 1] = '\0';
 
-    
     for (i = 0; line[i] != '\0'; i++)
     {
-        printf  ("i atual %d\n", i);
         if (line[i] == ' ')
         {
-            space ++;
-            printf  ("espaco atual %d\n", space);
+            words ++;
         }
-        if (line[i] == '.')
+        if (line[i] == '.' || line[i] == '!' || line[i] == '?')
         {
-            dot ++;
-            printf  ("ponto %d\n", dot);
+            sentances ++;
         }
     }
-    printf  ("%d\n", i);
-    printf  ("%d\n", space);
-    printf  ("%d\n", dot);
+    i = i - words - sentances;
 
+    L = ((float)i * (100 / (float)words));
+    S = ((float)sentances * (100/ (float)words));
+    index = (0.0588 * L) - (0.296 * S) - 15.8;
 
+    if (index < 1)
+    {
+        printf("\nBefore grade 1\n");
+    }
+    else if (index > 16)
+    {
+        printf("\nGrade 16+\n");
+    }
+    else
+    {
+        printf("\nGrade %d\n", (int)index);
+    }
+    
     return 0;
 }
