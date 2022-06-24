@@ -1,55 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int main ()
 {
     // Declaração das variáveis
-    int vinteCinco, dez, cinco, um;
-    float coin [4] = {0.25, 0.10, 0.05, 0.01};
-    float preco = 0, troco, valorPago;
+    char line [500];
+    char caractere;
+    int i = 0, space = 0, dot = 0;
 
-    // Loop para segurar o usuário até digitar os valores válidos
-    while(preco <= 0 || valorPago <= preco)
+    do 
     {
-        // Pede os valores para o usuário
-        printf("Digite o preco: ");
-        scanf("%f", &preco);
-        printf("Digite o valor pago: ");
-        scanf("%f", &valorPago);
+        caractere = getchar ();
+        line [i] = caractere;
+        i = i + 1;
     }
-        troco = valorPago - preco;      // Calcula o valor do troco
-        printf("O valor do troco sera de: %.2f", troco);    // Informa o valor do troco
-        
-        // Verifica qual a maior moeda possivel para o troco
-        vinteCinco = (int)(troco/coin[0]);
-        troco = troco - (vinteCinco*coin[0]);
-
-        dez = (int)(troco/coin[1]);
-        troco = troco - (dez*coin[1]);
-
-        cinco = (int)(troco/coin[2]);
-        troco = troco - (cinco*coin[2]);
-
-        um = (int)(troco/coin[3]);
-        troco = troco - (um*coin[3]);
-
-        // Imprime o resultado na tela
-        printf("\n\nDe ao cliente:\n");
-        if (vinteCinco > 0)
+    while (caractere != '\n');
+    line [i - 1] = '\0';
+    for (i = 0; line[i] == '\0'; i++)
+    {
+        printf  ("i atual %d", i);
+        if (line[i] == ' ')
         {
-            printf("%d moedas de 25 centavos\n", vinteCinco);
+            space ++;
+            printf  ("espaco atual %d", space);
         }
-        if (dez > 0)
+        if (line[i] == '.')
         {
-            printf("%d moedas de 10 centavos\n", dez);
+            dot ++;
+            printf  ("ponto %d", dot);
         }
-        if (cinco > 0)
-        {
-            printf("%d moedas de 5 centavos\n", cinco);
-        }
-        if (um > 0)
-        {
-            printf("%d moedas de 1 centavo\n", um);
-        }
+    }
+    printf  ("%d", i);
+    printf  ("%d", space);
+    printf  ("%d", dot);
+
+
     return 0;
 }
