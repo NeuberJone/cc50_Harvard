@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <cs50.h>
 #include <ctype.h>
 #include <string.h>
 #include <math.h>
@@ -16,7 +15,7 @@ int main(int argc, string argv[])
 
     if (argc == 1)
     {
-        printf("Command-line argument is blank\n");
+        printf("O argumento está em branco\n");
         return 1;
     }
 
@@ -26,17 +25,17 @@ int main(int argc, string argv[])
     {
         if ((argv[1][i] < '0') || (argv[1][i] > '9'))
         {
-            printf("Character is not a number\n");
+            printf("O caractere não e um numero\n");
             return 1;
         }
         else if (key < 1)
         {
-            printf("Character is negative\n");
+            printf("O caractere e negativo\n");
             return 1;
         }
         else if (argc != 2)
         {
-            printf("Command-line argument counter isn't 2\n");
+            printf("O argumento nao e 2\n");
             return 1;
         }
     }
